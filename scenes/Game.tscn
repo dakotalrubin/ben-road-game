@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://rpdduplyckry"]
+[gd_scene load_steps=5 format=3 uid="uid://rpdduplyckry"]
+
+[ext_resource type="PackedScene" uid="uid://lf2r47bcpxx7" path="res://assets/models/testTruck/testTruck.gltf" id="1_jx35q"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5c36l"]
+sky_top_color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+sky_horizon_color = Color(0.0156863, 0.164706, 0.309804, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_hxgag"]
+sky_material = SubResource("ProceduralSkyMaterial_5c36l")
+
+[sub_resource type="Environment" id="Environment_t5at3"]
+background_mode = 2
+sky = SubResource("Sky_hxgag")
 
 [node name="Game" type="Node3D"]
+
+[node name="testTruck" parent="." instance=ExtResource("1_jx35q")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="leftHeadlight" type="SpotLight3D" parent="testTruck"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, -0.04, 0.757, -1.17)
+
+[node name="rightHeadlight" type="SpotLight3D" parent="testTruck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.400292, 0.75662, -1.16985)
+
+[node name="Camera" type="Camera3D" parent="testTruck"]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 1.2, 2.5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t5at3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 5, 2.08165e-12)
+sky_mode = 1

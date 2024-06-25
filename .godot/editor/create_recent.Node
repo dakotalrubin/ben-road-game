@@ -1,0 +1,8 @@
+MeshInstance3D
+CSGBox3D
+DirectionalLight3D
+WorldEnvironment
+Camera3D
+SpotLight3D
+PointLight2D
+OmniLight3D
