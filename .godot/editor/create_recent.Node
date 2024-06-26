@@ -1,8 +1,12 @@
+OmniLight3D
+DirectionalLight3D
+LightmapGI
+PointLight2D
+Camera3D
+CollisionShape3D
+StaticBody3D
+SpotLight3D
+CharacterBody3D
 MeshInstance3D
 CSGBox3D
-DirectionalLight3D
 WorldEnvironment
-Camera3D
-SpotLight3D
-PointLight2D
-OmniLight3D

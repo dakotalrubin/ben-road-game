@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdsgte3yvglau"]
+
+[ext_resource type="PackedScene" uid="uid://lf2r47bcpxx7" path="res://assets/models/testTruck/testTruck.gltf" id="1_16snw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xjq13"]
+size = Vector3(1.11755, 1.047, 2.27487)
+
+[node name="playerTestTruck" type="CharacterBody3D"]
+
+[node name="testTruck" parent="." instance=ExtResource("1_16snw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="testTruckCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010376, 0.852219, -0.0124664)
+shape = SubResource("BoxShape3D_xjq13")
+
+[node name="leftHeadlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0.757, -1.17003)
+
+[node name="rightHeadlight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0.757, -1.17)
+
+[editable path="testTruck"]
